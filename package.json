@@ -1,0 +1,44 @@
+{
+  "name": "call-log",
+  "version": "0.1.1",
+  "description": "Parse a magnet URI and return an object of keys/values",
+  "main": "index.js",
+  "dependencies": {
+    "core-util-is": "*"
+  },
+  "devDependencies": {
+    "tape": "*"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie10",
+      "ff20",
+      "chrome20",
+      "safari6"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/call-log.git"
+  },
+  "keywords": [
+    "magnet",
+    "uri",
+    "urn",
+    "p2p",
+    "peer-to-peer",
+    "cryptolinks",
+    "bittorrent",
+    "webtorrent"
+  ],
+  "author": "Feross Aboukhadijeh <feross@feross.org> (http://feross.org/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/feross/call-log/issues"
+  },
+  "homepage": "https://github.com/feross/call-log"
+}
