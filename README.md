@@ -5,7 +5,7 @@ call-log
 
 [![browser support](https://ci.testling.com/feross/call-log.png)](https://ci.testling.com/feross/call-log)
 
-Instrument an object or class so that anytime a method is invoked, it gets logged to the console.
+In Node.js, instrument an object or class so that anytime one of its method is invoked it gets logged to the console.
 
 ## Installation
 
