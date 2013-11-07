@@ -21,7 +21,7 @@
     "instrumentation",
     "print calls",
     "print function calls",
-    "function calls",
+    "function calls"
   ],
   "author": "Feross Aboukhadijeh <feross@feross.org> (http://feross.org/)",
   "license": "MIT",
