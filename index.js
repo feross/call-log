@@ -16,7 +16,7 @@ module.exports = function (constructor) {
     constructor[methodName] = function () {
       var args = Array.prototype.slice.call(arguments)
       console.log('Called: ' + methodName + '(' + args + ')')
-      originalMethod.apply(null, args)
+      return originalMethod.apply(null, args)
     }
   })
 
