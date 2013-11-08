@@ -15,7 +15,7 @@ function hookStdout (callback) {
 }
 
 function Cat () {}
-Cat.prototype.meow = function (sound) { return sound; }
+Cat.prototype.meow = function (sound) { return sound }
 Cat.prototype.scratch = function () {}
 
 Cat.static1 = function () {}

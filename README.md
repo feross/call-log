@@ -15,7 +15,7 @@ In Node.js, instrument an object or class so that anytime one of its method is i
 var callLog = require('call-log')
 
 function Cat () {}
-Cat.prototype.meow = function (sound) { sound }
+Cat.prototype.meow = function (sound) { return sound }
 Cat.prototype.scratch = function () {}
 
 Cat.static1 = function () {}
