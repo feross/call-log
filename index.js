@@ -33,7 +33,7 @@ module.exports = function (constructor) {
       proto[methodName] = function () {
         var args = Array.prototype.slice.call(arguments)
         console.log('Called: ' + methodName + '(' + args + ')')
-        originalMethod.apply(this, args)
+        return originalMethod.apply(this, args)
       }
     })
   }

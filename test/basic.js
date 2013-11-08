@@ -15,7 +15,7 @@ function hookStdout (callback) {
 }
 
 function Cat () {}
-Cat.prototype.meow = function (sound) { sound }
+Cat.prototype.meow = function (sound) { return sound; }
 Cat.prototype.scratch = function () {}
 
 Cat.static1 = function () {}
@@ -24,7 +24,7 @@ Cat.static2 = function (cb) { cb() }
 callLog(Cat)
 
 test('instrumentation works', function (t) {
-  t.plan(6)
+  t.plan(7)
   var cat = new Cat()
 
   hookStdout(function (string) {
@@ -35,7 +35,8 @@ test('instrumentation works', function (t) {
   hookStdout(function (string) {
     t.equal(string, 'Called: meow(MEOAAAAWWW!)\n')
   })
-  cat.meow('MEOAAAAWWW!')
+  var output = cat.meow('MEOAAAAWWW!')
+  t.equal(output, 'MEOAAAAWWW!')
 
   hookStdout(function (string) {
     t.equal(string, 'Called: scratch()\n')
