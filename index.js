@@ -1,5 +1,3 @@
-var is = require('core-util-is') // added in Node 0.12
-
 /**
  * Instrument an object or class so that anytime a method is invoked, it gets
  * logged to the console.
@@ -8,7 +6,7 @@ var is = require('core-util-is') // added in Node 0.12
  */
 module.exports = function (constructor) {
   Object.keys(constructor).forEach(function (methodName) {
-    if (!is.isFunction(constructor[methodName])) {
+    if (typeof constructor[methodName] !== 'function') {
       return
     }
 
@@ -25,7 +23,7 @@ module.exports = function (constructor) {
     Object.keys(proto).forEach(function (methodName) {
       var propDesc = Object.getOwnPropertyDescriptor(proto, methodName)
       if (!propDesc.configurable || ('get' in propDesc) || ('set' in propDesc) ||
-          !is.isFunction(proto[methodName])) {
+          typeof proto[methodName] !== 'function') {
         return
       }
 
