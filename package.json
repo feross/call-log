@@ -3,11 +3,9 @@
   "version": "0.1.4",
   "description": "Instrument an object or class so that anytime one of its method is invoked it gets logged to the console.",
   "main": "index.js",
-  "dependencies": {
-    "tape": "~2.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "tape": "2.x"
+    "tape": "~2.0.1"
   },
   "scripts": {
     "test": "tape test/*.js"
