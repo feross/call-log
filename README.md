@@ -1,7 +1,5 @@
-call-log
+call-log [![Build Status](https://travis-ci.org/feross/call-log.png?branch=master)](https://travis-ci.org/feross/call-log) [![Gittip](http://img.shields.io/gittip/feross.png)](https://www.gittip.com/feross/)
 ==========
-
-[![Build Status](https://travis-ci.org/feross/call-log.png?branch=master)](https://travis-ci.org/feross/call-log)
 
 [![browser support](https://ci.testling.com/feross/call-log.png)](https://ci.testling.com/feross/call-log)
 
