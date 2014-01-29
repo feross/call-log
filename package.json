@@ -14,6 +14,16 @@
     "type": "git",
     "url": "git://github.com/feross/call-log.git"
   },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/9..latest",
+      "chrome/25..latest",
+      "firefox/20..latest",
+      "safari/6..latest",
+      "opera/15.0..latest"
+    ]
+  },
   "keywords": [
     "call log",
     "instrumentation",
