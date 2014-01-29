@@ -1,17 +1,19 @@
 var callLog = require('../')
 var test = require('tape')
 
-function hookStdout (callback) {
-  var oldWrite = process.stdout.write
+var _fn = null
+function onNextLog (fn) {
+  _fn = fn
+}
 
-  process.stdout.write = (function(write) {
-    return function (string, encoding, fd) {
-      write.apply(process.stdout, arguments)
-      callback(string, encoding, fd)
-      process.stdout.write = oldWrite
-    }
-  })(process.stdout.write)
-
+var _log = console.log.bind(console)
+global.console.log = function (data) {
+  if (_fn) {
+    _fn(data)
+    _fn = null
+  } else {
+    _log(data)
+  }
 }
 
 function Cat () {}
@@ -27,29 +29,29 @@ test('instrumentation works', function (t) {
   t.plan(7)
   var cat = new Cat()
 
-  hookStdout(function (string) {
-    t.equal(string, 'Called: meow()\n')
+  onNextLog(function (string) {
+    t.equal(string, 'Called: meow()')
   })
   cat.meow()
 
-  hookStdout(function (string) {
-    t.equal(string, 'Called: meow(MEOAAAAWWW!)\n')
+  onNextLog(function (string) {
+    t.equal(string, 'Called: meow(MEOAAAAWWW!)')
   })
   var output = cat.meow('MEOAAAAWWW!')
   t.equal(output, 'MEOAAAAWWW!')
 
-  hookStdout(function (string) {
-    t.equal(string, 'Called: scratch()\n')
+  onNextLog(function (string) {
+    t.equal(string, 'Called: scratch()')
   })
   cat.scratch()
 
-  hookStdout(function (string) {
-    t.equal(string, 'Called: static1()\n')
+  onNextLog(function (string) {
+    t.equal(string, 'Called: static1()')
   })
   Cat.static1()
 
-  hookStdout(function (string) {
-    t.equal(string, 'Called: static2(function () { t.ok(true) })\n')
+  onNextLog(function (string) {
+    t.equal(string, 'Called: static2(function () { t.ok(true) })')
   })
   Cat.static2(function () { t.ok(true) })
 
