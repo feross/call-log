@@ -3,6 +3,10 @@ call-log
 
 [![Build Status](https://travis-ci.org/feross/call-log.png?branch=master)](https://travis-ci.org/feross/call-log)
 
+[![browser support](https://ci.testling.com/feross/call-log.png)](https://ci.testling.com/feross/call-log)
+
+[![NPM](https://nodei.co/npm/call-log.png?downloads=true)](https://npmjs.org/package/call-log)
+
 In Node.js, instrument an object or class so that anytime one of its methods is invoked it gets logged to the console.
 
 ## Installation
