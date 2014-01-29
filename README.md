@@ -1,17 +1,20 @@
-call-log [![Build Status](https://travis-ci.org/feross/call-log.png?branch=master)](https://travis-ci.org/feross/call-log) [![Gittip](http://img.shields.io/gittip/feross.png)](https://www.gittip.com/feross/)
-==========
-
-[![browser support](https://ci.testling.com/feross/call-log.png)](https://ci.testling.com/feross/call-log)
-
-[![NPM](https://nodei.co/npm/call-log.png?downloads=true)](https://npmjs.org/package/call-log)
+# call-log
+[![Build Status](http://img.shields.io/travis/feross/call-log.svg)](https://travis-ci.org/feross/call-log)
+[![NPM Version](http://img.shields.io/npm/v/call-log.svg)](https://npmjs.org/package/call-log)
+[![NPM](http://img.shields.io/npm/dm/call-log.svg)](https://npmjs.org/package/call-log) 
+[![Gittip](http://img.shields.io/gittip/feross.svg)](https://www.gittip.com/feross/)
 
 In Node.js, instrument an object or class so that anytime one of its methods is invoked it gets logged to the console.
 
-## Installation
+[![browser support](https://ci.testling.com/feross/call-log.png)](https://ci.testling.com/feross/call-log)
 
-`npm install call-log`
+## install
 
-## Usage
+```
+npm install call-log
+```
+
+## usage
 
 ```js
 var callLog = require('call-log')
@@ -35,6 +38,6 @@ cat.meow('MEOAAAAWWW!')
 
 ```
 
-## MIT License
+## mit license
 
 Copyright (c) [Feross Aboukhadijeh](http://feross.org)
