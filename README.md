@@ -1,8 +1,8 @@
 # call-log
-[![Build Status](http://img.shields.io/travis/feross/call-log.svg)](https://travis-ci.org/feross/call-log)
-[![NPM Version](http://img.shields.io/npm/v/call-log.svg)](https://npmjs.org/package/call-log)
-[![NPM](http://img.shields.io/npm/dm/call-log.svg)](https://npmjs.org/package/call-log) 
-[![Gittip](http://img.shields.io/gittip/feross.svg)](https://www.gittip.com/feross/)
+[![Build Status](http://img.shields.io/travis/feross/call-log.png)](https://travis-ci.org/feross/call-log)
+[![NPM Version](http://img.shields.io/npm/v/call-log.png)](https://npmjs.org/package/call-log)
+[![NPM](http://img.shields.io/npm/dm/call-log.png)](https://npmjs.org/package/call-log)
+[![Gittip](http://img.shields.io/gittip/feross.png)](https://www.gittip.com/feross/)
 
 In Node.js, instrument an object or class so that anytime one of its methods is invoked it gets logged to the console.
 
