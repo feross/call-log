@@ -13,26 +13,30 @@ module.exports = function (constructor) {
     var originalMethod = constructor[methodName]
     constructor[methodName] = function () {
       var args = Array.prototype.slice.call(arguments)
-      console.log('Called: ' + methodName + '(' + args + ')')
-      return originalMethod.apply(null, args)
+      args.unshift('called ' + methodName)
+      console.log.apply(console, args)
+      return originalMethod.apply(null, arguments)
     }
   })
 
   var proto = constructor.prototype
   if (proto !== undefined) {
-    Object.keys(proto).forEach(function (methodName) {
+    for (var methodName in proto) {
       var propDesc = Object.getOwnPropertyDescriptor(proto, methodName)
-      if (!propDesc.configurable || ('get' in propDesc) || ('set' in propDesc) ||
-          typeof proto[methodName] !== 'function') {
+      if (typeof proto[methodName] !== 'function' || (propDesc &&
+          (!propDesc.configurable || ('get' in propDesc) || ('set' in propDesc)))) {
         return
       }
 
-      var originalMethod = proto[methodName]
-      proto[methodName] = function () {
-        var args = Array.prototype.slice.call(arguments)
-        console.log('Called: ' + methodName + '(' + args + ')')
-        return originalMethod.apply(this, args)
-      }
-    })
+      ;(function (methodName) {
+        var originalMethod = proto[methodName]
+        proto[methodName] = function () {
+          var args = Array.prototype.slice.call(arguments)
+          args.unshift('called ' + methodName)
+          console.log.apply(console, args)
+          return originalMethod.apply(this, arguments)
+        }
+      })(methodName)
+    }
   }
 }
