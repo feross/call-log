@@ -15,7 +15,7 @@ module.exports = function (constructor) {
       var args = Array.prototype.slice.call(arguments)
       args.unshift('called ' + methodName)
       console.log.apply(console, args)
-      return originalMethod.apply(null, arguments)
+      return originalMethod.apply(this, arguments)
     }
   })
 
@@ -25,7 +25,7 @@ module.exports = function (constructor) {
       var propDesc = Object.getOwnPropertyDescriptor(proto, methodName)
       if (typeof proto[methodName] !== 'function' || (propDesc &&
           (!propDesc.configurable || ('get' in propDesc) || ('set' in propDesc)))) {
-        return
+        continue
       }
 
       ;(function (methodName) {
