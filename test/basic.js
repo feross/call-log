@@ -42,8 +42,8 @@ test('basic logging works', function (t) {
 
   common.onNextLog(function (arg1, arg2) {
     t.equal(arg1, 'called static2')
-    t.equal(arg2.toString(), 'function () { t.pass(\'cb called\') }')
+    t.equal(arg2.toString(), 'function () { t.pass(\'cb called\'); }')
   })
-  Cat.static2(function () { t.pass('cb called') })
+  Cat.static2(function () { t.pass('cb called'); })
 
 })
