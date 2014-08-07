@@ -1,6 +1,8 @@
-# call-log [![travis](https://img.shields.io/travis/feross/call-log.svg)](https://travis-ci.org/feross/call-log) [![npm](https://img.shields.io/npm/v/call-log.svg)](https://npmjs.org/package/call-log) [![gittip](https://img.shields.io/gittip/feross.svg)](https://www.gittip.com/feross/)
+# call-log [![travis](https://img.shields.io/travis/feross/call-log.svg)](https://travis-ci.org/feross/call-log) [![npm](https://img.shields.io/npm/v/call-log.svg)](https://npmjs.org/package/call-log)
 
-In Node.js, instrument an object or class so that anytime one of its methods is invoked it gets logged to the console.
+#### Instrument a JavaScript class (or object) so that anytime a method function is called it gets logged to the console.
+
+![cat](https://raw.githubusercontent.com/feross/call-log/master/img.jpg)
 
 [![browser support](https://ci.testling.com/feross/call-log.png)](https://ci.testling.com/feross/call-log)
 
@@ -17,24 +19,22 @@ var callLog = require('call-log')
 
 function Cat () {}
 Cat.prototype.meow = function (sound) { return sound }
-Cat.prototype.scratch = function () {}
-
-Cat.static1 = function () {}
 
 // Add instrumentation to Cat
 callLog(Cat)
 
+// Use the cat
 var cat = new Cat()
 cat.meow()
 cat.meow('MEOAAAAWWW!')
 
 // Prints:
-// "Called: meow()"
-// "Called: meow(MEOAAAAWWW!)"
+// "called meow"
+// "called meow", "MEOAAAAWWW!"
 
 ```
 
-## mit license
+## license
 
-Copyright (c) [Feross Aboukhadijeh](http://feross.org)
+MIT. Copyright (c) [Feross Aboukhadijeh](http://feross.org)
 
