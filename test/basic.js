@@ -1,20 +1,6 @@
 var callLog = require('../')
+var common = require('./common')
 var test = require('tape')
-
-var _fn = null
-function onNextLog (fn) {
-  _fn = fn
-}
-
-var _log = console.log.bind(console)
-global.console.log = function (data) {
-  if (_fn) {
-    _fn(data)
-    _fn = null
-  } else {
-    _log(data)
-  }
-}
 
 function Cat () {}
 Cat.prototype.meow = function (sound) { return sound }
@@ -23,36 +9,41 @@ Cat.prototype.scratch = function () {}
 Cat.static1 = function () {}
 Cat.static2 = function (cb) { cb() }
 
+Cat.prototype.ignored = 'should be ignored'
+Cat.ignored2 = 'should be ignored'
+
 callLog(Cat)
 
-test('instrumentation works', function (t) {
-  t.plan(7)
+test('basic logging works', function (t) {
+  t.plan(9)
   var cat = new Cat()
 
-  onNextLog(function (string) {
-    t.equal(string, 'Called: meow()')
+  common.onNextLog(function (string) {
+    t.equal(string, 'called meow')
   })
   cat.meow()
 
-  onNextLog(function (string) {
-    t.equal(string, 'Called: meow(MEOAAAAWWW!)')
+  common.onNextLog(function (arg1, arg2) {
+    t.equal(arg1, 'called meow')
+    t.equal(arg2, 'MEOAAAAWWW!')
   })
   var output = cat.meow('MEOAAAAWWW!')
   t.equal(output, 'MEOAAAAWWW!')
 
-  onNextLog(function (string) {
-    t.equal(string, 'Called: scratch()')
+  common.onNextLog(function (string) {
+    t.equal(string, 'called scratch')
   })
   cat.scratch()
 
-  onNextLog(function (string) {
-    t.equal(string, 'Called: static1()')
+  common.onNextLog(function (string) {
+    t.equal(string, 'called static1')
   })
   Cat.static1()
 
-  onNextLog(function (string) {
-    t.equal(string, 'Called: static2(function () { t.ok(true) })')
+  common.onNextLog(function (arg1, arg2) {
+    t.equal(arg1, 'called static2')
+    t.equal(arg2.toString(), 'function () { t.pass(\'cb called\') }')
   })
-  Cat.static2(function () { t.ok(true) })
+  Cat.static2(function () { t.pass('cb called') })
 
 })

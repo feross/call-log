@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "inherits": "^2.0.1",
     "tape": "~2.0.1"
   },
   "scripts": {
