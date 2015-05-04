@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "inherits": "^2.0.1",
-    "tape": "~2.0.1"
+    "tape": "^4.0.0"
   },
   "scripts": {
     "test": "tape test/*.js"
