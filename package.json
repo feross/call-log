@@ -7,11 +7,12 @@
   "devDependencies": {
     "browserify": "^11.0.1",
     "inherits": "^2.0.1",
+    "standard": "^5.0.1",
     "tape": "^4.0.0",
     "uglify-js": "^2.4.24"
   },
   "scripts": {
-    "test": "tape test/*.js",
+    "test": "standard && tape test/*.js",
     "build": "browserify -s CallLog -r ./ | uglifyjs -m > call-log.min.js"
   },
   "repository": {
