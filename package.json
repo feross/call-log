@@ -5,25 +5,18 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "browserify": "^11.0.1",
     "inherits": "^2.0.1",
-    "tape": "^4.0.0"
+    "tape": "^4.0.0",
+    "uglify-js": "^2.4.24"
   },
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tape test/*.js",
+    "build": "browserify -s CallLog -r ./ | uglifyjs -m > call-log.min.js"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/feross/call-log.git"
-  },
-  "testling": {
-    "files": "test/*.js",
-    "browsers": [
-      "ie/9..latest",
-      "chrome/25..latest",
-      "firefox/20..latest",
-      "safari/6..latest",
-      "opera/15.0..latest"
-    ]
   },
   "keywords": [
     "call log",
