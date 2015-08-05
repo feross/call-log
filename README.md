@@ -12,6 +12,11 @@
 npm install call-log
 ```
 
+This module works in the browser with [browserify](http://browserify.org/).
+
+**Note:** If you're **NOT** using browserify, then use the included standalone file
+`call-log.min.js`. This exports a `CallLog` constructor on `window`.
+
 ## usage
 
 ```js
