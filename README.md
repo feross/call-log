@@ -4,8 +4,6 @@
 
 ![cat](https://raw.githubusercontent.com/feross/call-log/master/img.jpg)
 
-[![browser support](https://ci.testling.com/feross/call-log.png)](https://ci.testling.com/feross/call-log)
-
 ## install
 
 ```
