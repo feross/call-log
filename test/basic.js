@@ -45,5 +45,4 @@ test('basic logging works', function (t) {
     t.equal(arg2.toString(), 'function () { t.pass(\'cb called\') }')
   })
   Cat.static2(function () { t.pass('cb called') })
-
 })
