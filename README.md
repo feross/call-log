@@ -1,5 +1,7 @@
 # call-log [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/feross/call-log.svg)](https://greenkeeper.io/)
+
 [travis-image]: https://img.shields.io/travis/feross/call-log/master.svg
 [travis-url]: https://travis-ci.org/feross/call-log
 [npm-image]: https://img.shields.io/npm/v/call-log.svg
