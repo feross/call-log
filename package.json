@@ -9,7 +9,7 @@
     "inherits": "^2.0.1",
     "standard": "*",
     "tape": "^4.0.0",
-    "uglify-js": "^3.3.12"
+    "uglify-js": "^3.9.3"
   },
   "scripts": {
     "test": "standard && tape test/*.js",
