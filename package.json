@@ -26,10 +26,28 @@
     "print function calls",
     "function calls"
   ],
-  "author": "Feross Aboukhadijeh <feross@feross.org> (http://feross.org/)",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/feross/call-log/issues"
   },
-  "homepage": "https://github.com/feross/call-log"
+  "homepage": "https://github.com/feross/call-log",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/feross"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/feross"
+    },
+    {
+      "type": "consulting",
+      "url": "https://feross.org/support"
+    }
+  ]
 }

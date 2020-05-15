@@ -1,3 +1,4 @@
+/*! call-log. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 /**
  * Instrument an object or class so that anytime a method is invoked, it gets
  * logged to the console.
