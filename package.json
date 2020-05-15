@@ -1,6 +1,6 @@
 {
   "name": "call-log",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Instrument an object or class so that anytime one of its method is invoked it gets logged to the console.",
   "main": "index.js",
   "dependencies": {},
