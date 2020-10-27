@@ -5,8 +5,8 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "browserify": "^16.1.0",
     "inherits": "^2.0.1",
+    "browserify": "^17.0.0",
     "standard": "*",
     "tape": "^5.0.0",
     "uglify-js": "^3.3.12"
