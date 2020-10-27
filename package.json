@@ -5,11 +5,11 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "inherits": "^2.0.1",
     "browserify": "^17.0.0",
+    "inherits": "^2.0.4",
     "standard": "*",
-    "tape": "^5.0.0",
-    "uglify-js": "^3.3.12"
+    "tape": "^5.0.1",
+    "uglify-js": "^3.11.4"
   },
   "scripts": {
     "test": "standard && tape test/*.js",
